@@ -37,6 +37,8 @@ body{
 }
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
+video,iframe{max-width:100%}
+body{overflow-x:hidden}
 .shell{width:min(var(--max), calc(100% - 32px));margin:0 auto}
 .topbar{
   position:sticky;top:0;z-index:40;
@@ -298,6 +300,47 @@ h2{font-family:"DM Serif Display", Georgia, serif;font-size:clamp(2rem,4vw,2.5re
   .mosaic .item.tall{grid-row:auto;min-height:300px}
   .work-grid,.manifesto,.metric-row,.side-gallery{grid-template-columns:1fr}
   h1{font-size:3.2rem}
+}
+@media (max-width: 560px){
+  .shell{width:min(100% - 22px, var(--max))}
+  .topbar{position:relative}
+  .nav{gap:12px;padding:12px 0}
+  .brand{font-size:.84rem}
+  .brand small{font-size:.68rem}
+  .navlinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%}
+  .navlinks a{display:flex;align-items:center;justify-content:center;min-height:42px;padding:9px 8px;text-align:center;font-size:.82rem;background:rgba(255,255,255,.62)}
+  .hero{padding:18px 0 12px}
+  .panel,.story-card,.case-main,.case-side,.values,.footer-box{border-radius:22px}
+  .hero-copy{padding:22px;gap:24px}
+  .kicker{width:100%;padding:9px 12px;font-size:.78rem;white-space:normal}
+  h1{font-size:clamp(2.55rem, 17vw, 3.2rem);letter-spacing:0}
+  h2{font-size:clamp(1.8rem, 10vw, 2.25rem);letter-spacing:0}
+  .hero-sub,.section-copy{font-size:1rem}
+  .intro-note,.chip,.quote-box,.project-list .item,.metric,.manifesto .box{border-radius:16px}
+  .chips{gap:8px}
+  .chip{padding:9px 11px;font-size:.84rem}
+  .hero-photo .portrait{min-height:0;aspect-ratio:4/5}
+  .photo-note{grid-template-columns:1fr;padding:14px}
+  .photo-note .mini{min-height:0;aspect-ratio:3/2}
+  .section{padding:18px 0}
+  .manifesto .box,.work-card,.case-main{padding:20px}
+  .story-card{padding:20px !important}
+  .mosaic .item,.mosaic .item.tall,.side-gallery .shot{min-height:0;aspect-ratio:4/3}
+  .contact-row{grid-template-columns:1fr;max-width:100%;gap:1px}
+  .contact-item{padding:1.15rem}
+  .footer-box{display:grid;gap:18px;padding:22px}
+  #history iframe{min-height:2200px !important;border-radius:18px !important}
+  #project .project-gallery img{height:auto !important;aspect-ratio:4/3;object-fit:cover}
+  #project .project-gallery figure{width:100% !important}
+  #project-two .project-two-visual > div{display:grid !important;grid-template-columns:1fr;gap:10px}
+  #project-two .mini-zoom{width:min(130px, 42vw);height:auto;aspect-ratio:1/1;justify-self:center;overflow:hidden}
+  #project-two .mini-zoom:hover img{transform:none}
+  #project-two .project-two-card > div[style*="grid-template-columns"]{grid-template-columns:1fr !important}
+}
+@media (max-width: 380px){
+  .navlinks{grid-template-columns:1fr}
+  .hero-copy{padding:18px}
+  .hero-quote blockquote{font-size:1rem}
 }
 </style>
 </head>
@@ -928,7 +971,7 @@ h2{font-family:"DM Serif Display", Georgia, serif;font-size:clamp(2rem,4vw,2.5re
 <div class="project-split" style="display:grid; grid-template-columns:1.08fr .92fr; gap:22px; align-items:start; margin-top:18px;">
 <div>
 <div style="border-radius:24px; overflow:hidden; border:1px solid rgba(22,22,22,.08); background:#111; box-shadow:0 18px 44px rgba(0,0,0,.14);">
-<video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata" poster="/assets/poster_1.png"  style="width:100%; display:block; background:#000;">
+<video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata" poster="assets/poster_1.png"  style="width:100%; display:block; background:#000;">
 <source src="assets/live_demo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -1046,14 +1089,14 @@ h2{font-family:"DM Serif Display", Georgia, serif;font-size:clamp(2rem,4vw,2.5re
   #project-shelving .metric span{font-size:.88rem; color:var(--muted);}
 #project-shelving .shelf-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 250px)); 
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 250px)); 
   gap: 14px;
-  justify-content: center; /* centers the grid block */
+  justify-content: center;
 }
 
 #project-shelving .shelf-gallery .placeholder {
-  width: 250px;
-  height: 250px;
+  width: min(250px, 100%);
+  aspect-ratio: 1;
   border-radius: 20px;
   padding: 10px;
   border: 1.5px dashed rgba(126,24,50,.24);
@@ -1070,14 +1113,14 @@ h2{font-family:"DM Serif Display", Georgia, serif;font-size:clamp(2rem,4vw,2.5re
 #project-shelving .shelf-gallery video {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* crops overflow */
-  border-radius: 16px; /* rounded corners inside */
+  object-fit: cover;
+  border-radius: 16px;
   display: block;
 }
 
 
-  #project-shelving .catto{  width: 350px;
-  height:350px;
+  #project-shelving .catto{  width: min(350px, 100%);
+  aspect-ratio:1;
   border-radius: 20px;
   padding: 10px;
   border: 1.5px dashed rgba(126,24,50,.24);
@@ -1092,10 +1135,9 @@ h2{font-family:"DM Serif Display", Georgia, serif;font-size:clamp(2rem,4vw,2.5re
 #project-shelving .catto img {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* crops overflow */
-  border-radius: 16px; /* rounded corners inside */  
-
-
+  object-fit: cover;
+  border-radius: 16px;
+}
   #project-shelving .placeholder{min-height:220px; border-radius:20px; border:1.5px dashed rgba(126,24,50,.24); background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(247,241,234,.92)); padding:18px; display:flex; flex-direction:column; justify-content:flex-end; gap:8px; box-shadow:0 12px 30px rgba(37,23,31,.05);}
   #project-shelving .placeholder strong{font-size:1rem; color:var(--burgundy);}
   #project-shelving .placeholder span{font-size:.9rem; color:var(--muted);}
@@ -1106,8 +1148,9 @@ h2{font-family:"DM Serif Display", Georgia, serif;font-size:clamp(2rem,4vw,2.5re
   @media (max-width: 720px){
     #project-shelving .shelf-gallery,
     #project-shelving .shelf-metrics{grid-template-columns:1fr;}
+    #project-shelving .shelf-gallery .placeholder,
+    #project-shelving .catto{width:100%;}
   }
-}
 
 
 
