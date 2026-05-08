@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dina Ahmed | Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f8f4ef;
+  --paper:#fffdfa;
+  --ink:#161616;
+  --muted:#5c5964;
+  --line:rgba(22,22,22,.08);
+  --burgundy:#7e1832;
+  --burgundy-2:#b22b4b;
+  --gold:#e5a82f;
+  --blue:#2f67d8;
+  --shadow:0 24px 70px rgba(37,23,31,.12);
+  --radius:26px;
+  --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Inter",system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(229,168,47,.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(47,103,216,.11), transparent 26%),
+    linear-gradient(180deg, #fbf7f2 0%, #f7f1ea 100%);
+  line-height:1.65;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.shell{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+.topbar{
+  position:sticky;top:0;z-index:40;
+  backdrop-filter: blur(14px);
+  background:rgba(248,244,239,.76);
+  border-bottom:1px solid rgba(22,22,22,.05);
+}
+.nav{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:18px;padding:14px 0;
+}
+.brand{font-weight:800;letter-spacing:.04em;font-size:.92rem;text-transform:uppercase}
+.brand small{display:block;font-size:.72rem;color:var(--muted);font-weight:600;letter-spacing:.02em;text-transform:none}
+.navlinks{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end}
+.navlinks a{
+  font-size:.95rem;color:var(--muted);padding:8px 12px;border-radius:999px;transition:.2s ease;
+}
+.navlinks a:hover{background:white;color:var(--ink)}
+
+.hero{
+  padding:48px 0 26px;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.18fr .82fr;gap:28px;align-items:stretch;
+}
+.panel{
+  background:rgba(255,253,250,.78);
+  border:1px solid rgba(22,22,22,.06);
+  border-radius:34px;
+  box-shadow:var(--shadow);
+}
+.hero-copy{
+  padding:46px;
+  position:relative;
+  overflow:hidden;
+  min-height:680px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.hero-copy::before{
+  content:"";
+  position:absolute;inset:auto auto -90px -70px;
+  width:240px;height:240px;border-radius:50%;
+  background:radial-gradient(circle, rgba(229,168,47,.23), transparent 72%);
+}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  width:max-content;padding:10px 16px;border-radius:999px;
+  background:rgba(126,24,50,.08);color:var(--burgundy);
+  font-weight:700;font-size:.84rem;letter-spacing:.02em;
+}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--burgundy-2)}
+h1{
+  font-family:"DM Serif Display", Georgia, serif;
+  font-size:clamp(3rem, 8vw, 6rem);
+  line-height:.92;
+  margin:18px 0 14px;
+  letter-spacing:-.04em;
+}
+.hero-sub{
+  font-size:clamp(1.06rem,2vw,1.25rem);
+  color:#2f2b33;max-width:780px;
+}
+.hero-sub strong{color:var(--burgundy)}
+.intro-note{
+  margin-top:22px;padding:18px 20px;border-radius:22px;
+  background:linear-gradient(135deg, rgba(126,24,50,.07), rgba(47,103,216,.06));
+  border:1px solid rgba(126,24,50,.08);
+  color:#2d2430;font-weight:500;
+}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chip{
+  padding:10px 14px;border-radius:999px;background:#fff;
+  border:1px solid rgba(22,22,22,.08);font-size:.92rem;font-weight:600;color:#342f37;
+}
+.hero-quote{
+  margin-top:28px;padding-top:24px;border-top:1px solid rgba(22,22,22,.08);
+  display:grid;gap:14px;
+}
+.hero-quote blockquote{
+  margin:0;font-size:1.08rem;color:#342f37;max-width:700px
+}
+.hero-quote strong{color:var(--burgundy)}
+.hero-photo{padding:18px;display:flex;flex-direction:column;gap:18px}
+.hero-photo .portrait{
+  border-radius:26px;overflow:hidden;aspect-ratio: .84 / 1;
+  min-height:620px;
+}
+.hero-photo .portrait img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.photo-note{
+  display:grid;grid-template-columns:1fr 180px;gap:18px;align-items:center;
+  padding:18px;border-radius:22px;background:#fff;border:1px solid rgba(22,22,22,.06)
+}
+.photo-note .mini{border-radius:18px;overflow:hidden;aspect-ratio:4/5;min-height:200px}
+.photo-note .mini img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.photo-note p{margin:0;color:var(--muted);font-size:.95rem}
+
+.section{padding:26px 0}
+.section .section-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start;margin-bottom:22px}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;font-weight:800;color:var(--burgundy)}
+h2{font-family:"DM Serif Display", Georgia, serif;font-size:clamp(2rem,4vw,2.5rem);line-height:.98;margin:.2rem 0 0}
+.section-copy{color:#332f36;font-size:1.04rem}
+
+.story-card{
+  padding:34px;background:rgba(255,253,250,.84);
+  border-radius:30px;border:1px solid rgba(22,22,22,.06);box-shadow:var(--shadow)
+}
+.story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.story-text p{margin:0 0 1rem}
+.accent{color:var(--burgundy);font-weight:700}
+.mosaic{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.mosaic .item{border-radius:20px;overflow:hidden;position:relative;background:#f1ede9;min-height:220px}
+.mosaic .item.tall{grid-row:span 2;min-height:452px}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+.caption{
+  position:absolute;left:12px;right:12px;bottom:12px;
+  padding:10px 12px;border-radius:14px;background:rgba(16,16,16,.68);color:#fff;font-size:.84rem
+}
+
+.manifesto{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px
+}
+.manifesto .box{
+  background:#fff;border:1px solid rgba(22,22,22,.06);border-radius:24px;padding:20px;
+  box-shadow:0 12px 30px rgba(37,23,31,.07)
+}
+.manifesto h3{margin:0 0 8px;font-size:1.05rem}
+.manifesto p{margin:0;color:var(--muted);font-size:.95rem}
+
+.case-study{
+  margin-top:18px;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:22px;
+}
+.case-main,.case-side{
+  background:rgba(255,253,250,.86);border:1px solid rgba(22,22,22,.06);border-radius:30px;
+  box-shadow:var(--shadow)
+}
+.case-main{padding:34px}
+.case-side{padding:20px;display:grid;gap:16px}
+.label{display:inline-flex;padding:8px 12px;border-radius:999px;background:rgba(47,103,216,.09);color:var(--blue);font-weight:700;font-size:.82rem}
+.case-main h3{font-size:1.7rem;line-height:1.05;margin:14px 0 14px}
+.case-main p{margin:0 0 1rem;color:#352f37}
+.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.metric{
+  background:#fff;border-radius:20px;padding:16px;border:1px solid rgba(22,22,22,.06)
+}
+.metric strong{display:block;font-size:1.3rem;color:var(--burgundy)}
+.metric span{font-size:.88rem;color:var(--muted)}
+.project-list{display:grid;gap:12px}
+.project-list .item{
+  background:#fff;border-radius:22px;padding:16px;border:1px solid rgba(22,22,22,.06)
+}
+.project-list strong{display:block;margin-bottom:4px}
+.project-list p{margin:0;color:var(--muted);font-size:.94rem}
+.side-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.side-gallery .shot{border-radius:18px;overflow:hidden;background:#efe9e2;min-height:190px}
+.side-gallery img{width:100%;height:100%;object-fit:cover}
+.quote-box{
+  padding:18px;border-radius:22px;background:linear-gradient(135deg, rgba(126,24,50,.08), rgba(229,168,47,.10));
+  border:1px solid rgba(126,24,50,.08);color:#342f37;font-weight:500
+}
+
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.work-card{
+  padding:22px;border-radius:26px;background:rgba(255,253,250,.86);border:1px solid rgba(22,22,22,.06);
+  box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px
+}
+.work-card .visual{border-radius:20px;overflow:hidden;background:#f1ece5;aspect-ratio: 4 / 4.3}
+.work-card .visual img{width:100%;height:100%;object-fit:cover}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:.78rem;font-weight:700;color:var(--burgundy);background:rgba(126,24,50,.08);padding:8px 10px;border-radius:999px}
+.work-card h3{margin:0;font-size:1.22rem}
+.work-card p{margin:0;color:var(--muted)}
+
+.scholar-gallery{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px
+}
+.scholar-shot{
+  border-radius:20px;overflow:hidden;background:#f1ece5;border:1px solid rgba(22,22,22,.06);
+  box-shadow:0 12px 30px rgba(37,23,31,.07)
+}
+.scholar-shot img{
+  width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:4/3
+}
+.scholar-caption{
+  padding:12px 14px;color:var(--muted);font-size:.92rem;background:#fff
+}
+@media (max-width: 720px){
+  .scholar-gallery{grid-template-columns:1fr}
+}
+
+.values{
+  margin-top:18px;
+  padding:30px;border-radius:30px;background:#15131a;color:#f5f1ea;position:relative;overflow:hidden; justify-self: center; align-items:center
+}
+.values::after{
+  content:"";position:absolute;right:0px;top:0px;width:240px;height:240px;border-radius:50%;
+  background:radial-gradient(circle, rgba(47,103,216,.28), transparent 70%); align-items:center; justify-self: center;
+}
+.values-grid{display:block;grid-template-columns:2fr 1fr;gap:18px;position:relative;z-index:1; align-items:center; justify-self: center;}
+.values p{margin:0;color:rgba(245,241,234,.84); align-items:center; justify-self: center;}
+.listy{align-items:center; justify-content: center;}
+.listy div{border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08); align-items:center; justify-self: center;}
+.listy strong{display:block;color:#fff;margin-bottom:2px; align-items:center; justify-self: center;} 
+
+.footer{
+  padding:26px 0 48px;color:var(--muted)
+}
+.footer-box{
+  padding:24px 28px;border-radius:26px;background:rgba(255,253,250,.82);border:1px solid rgba(22,22,22,.06);
+  display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap
+}
+.footer .signature{font-family:"DM Serif Display", Georgia, serif;font-size:1.5rem;color:var(--burgundy)}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── CONTACT ───────────────────────────────────── */
+  .contact { background: var(--ink); text-align: center; }
+  .contact .sec-meta { justify-content: center; }
+  .contact h2 { color: var(--paper); }
+  .contact h2 em { color: var(--rust-light); }
+  .contact .sec-num { color: var(--rust-light); }
+  .contact .sec-rule { background: rgba(255,255,255,0.1); }
+  .contact .sec-name { color: rgba(245,240,232,0.4); }
+  .contact-tagline { font-size: clamp(0.85rem,1.4vw,0.95rem); line-height: 1.8; color: rgba(245,240,232,0.5); max-width: 480px; margin: 0 auto clamp(2rem,4vw,3.5rem); }
+  .contact-row {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: rgba(255,255,255,0.05);
+    max-width: 760px; margin: 0 auto clamp(3rem,6vw,5rem);
+  }
+  .contact-item {
+    background: var(--ink); padding: clamp(1.5rem,3vw,2.2rem) 1.5rem;
+    text-decoration: none; color: var(--paper);
+    display: flex; flex-direction: column; align-items: center; gap: 0.45rem;
+    transition: background 0.3s;
+  }
+  .contact-item:hover { background: #7e1832; }
+  .contact-icon { font-size: 1.3rem; }
+  .contact-type { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust-light); }
+  .contact-val { font-size: clamp(0.72rem,1.1vw,0.82rem); color: rgba(245,240,232,0.6); word-break: break-all; }
+
+
+@media (max-width: 1080px){
+  .hero-grid,.story-grid,.case-study,.section .section-head,.values-grid{grid-template-columns:1fr}
+  .work-grid,.manifesto{grid-template-columns:repeat(2,1fr)}
+  .hero-copy{min-height:auto}
+  .hero-photo .portrait{min-height:560px}
+}
+@media (max-width: 720px){
+  .nav{align-items:flex-start;flex-direction:column}
+  .navlinks{justify-content:flex-start}
+  .hero-copy{padding:28px}
+  .hero-photo{padding:14px}
+  .hero-photo .portrait{min-height:440px}
+  .section .section-head{gap:12px}
+  .mosaic{grid-template-columns:1fr}
+  .mosaic .item.tall{grid-row:auto;min-height:300px}
+  .work-grid,.manifesto,.metric-row,.side-gallery{grid-template-columns:1fr}
+  h1{font-size:3.2rem}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+<div class="shell nav">
+<div class="brand">Dina Ahmed<small>Dentist • Product Designer in the making</small></div>
+<div class="navlinks">
+<a href="#about">About</a>
+<a href="#history">History</a>
+<a href="#project">Project Glimpse</a>
+<a href="#craft">Craft</a>
+<a href="#Favorite quote">Favorite quote</a>
+</div>
+</div>
+</div>
+<header class="hero shell">
+<div class="hero-grid">
+<div class="panel hero-copy reveal">
+<div>
+<div class="kicker"><span class="dot"></span> Curious by instinct. Precise by training.</div>
+<h1>Dina Ahmed</h1>
+<p class="hero-sub">
+            I am a <strong>dentist with a designer’s brain</strong> — the kind of person who cannot look at a tool,
+            a workflow, or a small daily frustration without quietly redesigning it in her head.
+          </p>
+<div class="intro-note">
+            Hi there, this is my portfolio, where I show a part of who I really am, of my identity. A part which I hold dear and feel really proud of.
+          </div>
+<div class="chips">
+<span class="chip">Product design</span>
+<span class="chip">3D thinking</span>
+<span class="chip">Medical insight</span>
+<span class="chip">Prototype mindset</span>
+<span class="chip">Woodworking &amp; making</span>
+</div>
+</div>
+<div class="hero-quote">
+<blockquote>
+<strong>My purpose is to be true to myself</strong><br/>
+            So this portfolio is honest on purpose: it shows how I think, what I notice, what I make,
+            and why product design feels less like a pivot and more like finally naming the way my mind has always worked.
+          </blockquote>
+</div>
+</div>
+<div class="panel hero-photo reveal">
+<div class="portrait">
+<img alt="Portrait of Dina Ahmed" src="/assets/portrait 1.jpg"/>
+</div>
+<div class="photo-note">
+<div>
+<p>"To me, making things and designing products is a love letter to the world. It's my way of expressing who I am, and what I find to be my purpose in life"</p>
+</div>
+<div class="mini"><img alt="Portrait of Dina Ahmed" src="/assets/portrait 2.jpg"/></div>
+</div>
+</div>
+</div>
+</header>
+<main class="shell">
+<section class="section" id="about">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow">About</div>
+<h2>My paradigm shift from being a practicing dentist to an aspiring product designer is more like a pattern finally becoming visible.</h2>
+</div>
+<div class="section-copy">
+<p>
+            Dentistry taught me discipline, observation, ergonomics, and how much the smallest design decision can affect
+            comfort, speed, and trust. But long before the clinic, I was already drawn to mechanisms, experiments,
+            the logic inside objects, and what makes them tick! 
+          </p>
+<p>
+            What makes me who I am is not just that I want to design. It is <span class="accent">how I notice</span>:
+            I watch movement, friction, awkward steps, wasted effort, and hidden potential.
+            I am interested in products with intentionality behind them that feel intelligent without feeling forced.
+          </p>
+</div>
+</div>
+<div class="manifesto reveal">
+<div class="box">
+<h3>My workflow begins from observing the tools I use</h3>
+<p>I naturally catch tiny inefficiencies and ask why they still exist.</p>
+</div>
+<div class="box">
+<h3>I Never stop at just theorizing, I MAKE adjustments!</h3>
+<p>I trust sketching, testing, making, and adjusting more than abstract talk alone.</p>
+</div>
+<div class="box">
+<h3>I then reflect on my ideas</h3>
+<p>My strongest ideas usually come from deep noticing, not surface-level excitement. That is how I figure out what works and what doesn't.</p>
+</div>
+<div class="box">
+<h3>Every day I take a little step. Each bigger than the last.</h3>
+<p>I build with persistence. I do not give up just because the path is nonlinear.</p>
+<p>Steps turn into strides and strides turn into leaps and that is how I make progress!</p>
+</div>
+</div>
+</section>
+<section class="section" id="history">
+<div class="story-card reveal" style="padding:18px; overflow:hidden;">
+<style>
+          @media (max-width: 860px){
+            #history iframe{min-height:2050px !important;}
+          }
+        </style>
+<iframe loading="lazy" srcdoc='&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  &lt;title&gt;Origin Story – Periscope&lt;/title&gt;
+  &lt;style&gt;
+    :root {
+      --bg: #fcf7f2;
+      --paper: rgba(255,255,255,0.78);
+      --text: #181818;
+      --muted: #5d5d5d;
+      --red: #a61e22;
+      --red-dark: #7e1115;
+      --gold: #d7a84b;
+      --line: rgba(24,24,24,0.08);
+      --shadow: 0 18px 60px rgba(0,0,0,0.10);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(166,30,34,0.10), transparent 25%),
+        radial-gradient(circle at bottom left, rgba(215,168,75,0.10), transparent 22%),
+        linear-gradient(180deg, #fffaf5 0%, #f7efe7 100%);
+    }
+
+    .wrap {
+      min-height: 100vh;
+      padding: 56px 22px 80px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .section {
+      width: min(1220px, 100%);
+      background: var(--paper);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.65);
+      border-radius: 36px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(166,30,34,0.08), transparent 18%, transparent 82%, rgba(215,168,75,0.08)),
+        linear-gradient(180deg, rgba(255,255,255,0.40), transparent 22%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .topbar {
+      height: 10px;
+      background: linear-gradient(90deg, var(--red) 0%, #d04145 35%, var(--gold) 100%);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 0;
+    }
+
+    .left, .right {
+      padding: 48px;
+    }
+
+    .left {
+      border-right: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.25));
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red-dark);
+      background: rgba(166,30,34,0.08);
+      border: 1px solid rgba(166,30,34,0.14);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      max-width: 10ch;
+    }
+
+    .lead {
+      margin: 0;
+      font-size: clamp(1rem, 1.2vw, 1.12rem);
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 63ch;
+    }
+
+    .comic-card {
+      margin-top: 34px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(24,24,24,0.08);
+      box-shadow: 0 18px 44px rgba(0,0,0,0.10);
+      background: #fff;
+    }
+
+    .comic-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .comic-caption {
+      padding: 14px 18px 18px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #fbf7f2);
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .story-card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px 22px 20px;
+      background: rgba(255,255,255,0.74);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.03);
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--red-dark);
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      font-size: 0.93rem;
+      text-transform: uppercase;
+    }
+
+    .story-card p {
+      margin: 0;
+      line-height: 1.84;
+      color: #313131;
+      font-size: 1rem;
+    }
+
+    .impact {
+      margin-top: 8px;
+      padding: 26px;
+      border-radius: 24px;
+      background:
+        linear-gradient(135deg, rgba(166,30,34,0.96), rgba(126,17,21,0.96));
+      color: white;
+      box-shadow: 0 18px 36px rgba(126,17,21,0.22);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .impact::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      right: -80px;
+      bottom: -110px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .impact h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .impact p {
+      margin: 0;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.92);
+      font-size: 1rem;
+      max-width: 58ch;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      margin: 16px 0;
+    }
+
+    .footer-note {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.82);
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width: 980px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .left {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .left, .right {
+        padding: 30px 22px;
+      }
+
+      h1 {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        padding: 18px 12px 28px;
+      }
+
+      .section {
+        border-radius: 24px;
+      }
+
+      .story-card,
+      .impact,
+      .comic-card {
+        border-radius: 18px;
+      }
+
+      .lead,
+      .story-card p,
+      .impact p {
+        line-height: 1.75;
+      }
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main class="wrap"&gt;
+    &lt;section class="section" aria-labelledby="origin-story-title"&gt;
+      &lt;div class="topbar"&gt;&lt;/div&gt;
+
+      &lt;div class="grid"&gt;
+        &lt;div class="left"&gt;
+          &lt;div class="eyebrow"&gt;Design Origin Story&lt;/div&gt;
+          &lt;h1 id="origin-story-title"&gt;Curiosity came first. Design came later.&lt;/h1&gt;
+          &lt;p class="lead"&gt;
+            My interest in design started before I had the language for it. It began with a very simple obsession:
+            seeing something strange, useful, or clever, and wanting to understand exactly how it worked.
+          &lt;/p&gt;
+
+          &lt;figure class="comic-card"&gt;
+            &lt;img src="/assets/comic.jpg" alt="Comic showing childhood fascination with a periscope, discovering how it works, and building a first prototype." /&gt;
+            &lt;figcaption class="comic-caption"&gt;
+              A childhood memory that stayed with me: first fascination, then understanding, then building.
+            &lt;/figcaption&gt;
+          &lt;/figure&gt;
+        &lt;/div&gt;
+
+        &lt;div class="right"&gt;
+          &lt;article class="story-card"&gt;
+            &lt;span class="label"&gt;Age 8&lt;/span&gt;
+            &lt;p&gt;
+              When I was 8, I saw Robbie’s periscope in &lt;em&gt;LazyTown&lt;/em&gt;. I remember being fascinated by the idea
+              that a tool could help you see above walls and around corners. I kept wondering how it actually worked.
+            &lt;/p&gt;
+          &lt;/article&gt;
+
+          &lt;article class="story-card"&gt;
+            &lt;span class="label"&gt;Age 13&lt;/span&gt;
+            &lt;p&gt;
+              When I was 13, I finally found the explanation in a science book. Seeing the mirrors and angles laid
+              out on the page answered part of the mystery — and immediately made me want to try building one myself.
+            &lt;/p&gt;
+          &lt;/article&gt;
+
+          &lt;article class="story-card"&gt;
+            &lt;span class="label"&gt;First prototype&lt;/span&gt;
+            &lt;p&gt;
+              I spent a full day cutting cardboard, measuring, taping mirrors into place, and adjusting the shape
+              until my own periscope finally worked. That was the feeling I never really forgot: making an idea real
+              and being a little stunned that it worked.
+            &lt;/p&gt;
+          &lt;/article&gt;
+
+          &lt;section class="impact" aria-labelledby="impact-title"&gt;
+            &lt;h2 id="impact-title"&gt;How this shaped me&lt;/h2&gt;
+            &lt;p&gt;
+              Looking back, this was more than a childhood memory. It was my first experience of design as discovery:
+              noticing a mystery, studying how something works, and turning that understanding into a physical object.
+              What stayed with me was not just the periscope itself, but the process — curiosity, analysis,
+              experimentation, and the thrill of making an idea real.
+            &lt;/p&gt;
+            &lt;div class="divider"&gt;&lt;/div&gt;
+            &lt;p class="footer-note"&gt;
+              That feeling still defines how I approach design today.
+            &lt;/p&gt;
+          &lt;/section&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+' style="width:100%; height:700px; border:0; border-radius:24px; background:#fff; display:block;" title="Periscope origin story"></iframe>
+<script>
+          (function(){
+            const frame = document.querySelector("#history iframe");
+            if(!frame) return;
+            function resizeFrame(){
+              try{
+                const doc = frame.contentWindow.document;
+                const h = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+                if(h) frame.style.height = (h + 8) + "px";
+              }catch(e){}
+            }
+            frame.addEventListener("load", function(){ resizeFrame(); setTimeout(resizeFrame, 300); setTimeout(resizeFrame, 1000); });
+            window.addEventListener("resize", resizeFrame);
+          })();
+        </script>
+</div>
+</section>
+<section class="section" id="project">
+<div class="case-main reveal" style="padding:34px; overflow:hidden;">
+<style>
+          #project .project-popup-trigger{
+            margin:18px auto 0;
+            border:0;
+            border-radius:999px;
+            background:#f2e5da;
+            color:#6f3124;
+            padding:12px 18px;
+            font:inherit;
+            font-weight:600;
+            cursor:pointer;
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:10px;
+            box-shadow:0 10px 24px rgba(111,49,36,.14);
+            transition:transform .24s ease, box-shadow .24s ease, background .24s ease;
+          }
+          #project .project-popup-trigger::after{
+            content:'+';
+            width:26px;
+            height:26px;
+            border-radius:999px;
+            display:grid;
+            place-items:center;
+            background:rgba(255,255,255,.8);
+            font-size:1.05rem;
+            line-height:1;
+            transition:transform .24s ease, background .24s ease;
+          }
+          #project .project-popup-trigger:hover{
+            transform:translateY(-2px);
+            box-shadow:0 16px 34px rgba(111,49,36,.18);
+            background:#eddccd;
+          }
+          #project .project-popup-trigger:hover::after{
+            transform:rotate(90deg) scale(1.05);
+            background:#fff;
+          }
+          #project-context-modal{
+            position:fixed;
+            inset:0;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:24px;
+            background:rgba(15,10,14,.58);
+            backdrop-filter:blur(8px);
+            z-index:9999;
+            opacity:0;
+            visibility:hidden;
+            pointer-events:none;
+            transition:opacity .32s ease, visibility .32s ease, background .32s ease;
+          }
+          #project-context-modal.open{
+            opacity:1;
+            visibility:visible;
+            pointer-events:auto;
+          }
+          #project-context-modal .modal-card{
+            width:min(680px, 100%);
+            max-height:min(86vh, 760px);
+            overflow:auto;
+            background:#fffaf5;
+            color:#2b2430;
+            border-radius:28px;
+            padding:26px;
+            box-shadow:0 28px 80px rgba(15,10,14,.24);
+            border:1px solid rgba(22,22,22,.08);
+            transform:translateY(24px) scale(.96);
+            opacity:0;
+            transition:transform .38s cubic-bezier(.2,.8,.2,1), opacity .28s ease;
+          }
+          #project-context-modal.open .modal-card{
+            transform:translateY(0) scale(1);
+            opacity:1;
+          }
+          #project-context-modal .modal-head{
+            display:flex;
+            align-items:flex-start;
+            justify-content:space-between;
+            gap:18px;
+            margin-bottom:16px;
+          }
+          #project-context-modal h3{
+            margin:0;
+            font-size:1.5rem;
+          }
+          #project-context-modal p{
+            margin:0;
+            color:#352f37;
+            line-height:1.75;
+          }
+          #project-context-modal .modal-close{
+            border:0;
+            background:#f2e5da;
+            color:#6f3124;
+            width:40px;
+            height:40px;
+            border-radius:999px;
+            cursor:pointer;
+            font:inherit;
+            font-size:1.3rem;
+            flex-shrink:0;
+            transition:transform .22s ease, background .22s ease;
+          }
+          #project-context-modal .modal-close:hover{
+            transform:rotate(90deg);
+            background:#ead6c7;
+          }
+          @media (prefers-reduced-motion: reduce){
+            #project .project-popup-trigger,
+            #project .project-popup-trigger::after,
+            #project-context-modal,
+            #project-context-modal .modal-card,
+            #project-context-modal .modal-close{
+              transition:none;
+            }
+          }
+          @media (max-width: 1080px){
+            #project .project-split, #project .project-bottom{grid-template-columns:1fr !important;}
+            #project .project-gallery{grid-template-columns:repeat(2, 1fr) !important;}
+          }
+          @media (max-width: 680px){
+            #project .case-main{padding:22px !important;}
+            #project h2{font-size:2rem;}
+            #project .section-copy{width:100%;}
+            #project .project-popup-trigger{width:100%; justify-content:space-between; padding:13px 16px; font-size:.98rem;}
+            #project-context-modal{padding:14px;}
+            #project-context-modal .modal-card{padding:20px 18px; border-radius:22px;}
+            #project-context-modal h3{font-size:1.25rem;}
+            #project .project-gallery{grid-template-columns:1fr !important;}
+          }
+        </style>
+<div class="section-head" style="margin-bottom:20px;">
+<div>
+<div class="eyebrow">Project Glimpse</div>
+<h2>Pulp Therapy Instrument Organizer</h2>
+</div>
+<div class="section-copy">
+<p>
+              A working prototype I designed to make pulp therapy instruments easier to access, better organized,
+              and more compatible with a clean, efficient clinical workflow.
+            </p>
+<button class="project-popup-trigger" data-open-modal="project-context-modal" type="button">
+              Read the full clinical context behind this prototype
+            </button>
+</div>
+</div>
+<div aria-hidden="true" aria-labelledby="project-context-title" aria-modal="true" id="project-context-modal" role="dialog">
+<div class="modal-card">
+<div class="modal-head">
+<div>
+<div class="eyebrow">Clinical Context</div>
+<h3 id="project-context-title">Why this organizer matters in practice</h3>
+</div>
+<button aria-label="Close popup" class="modal-close" data-close-modal="" type="button">×</button>
+</div>
+<p>
+              In dentistry we do something called pulp therapy which is a minimally invasive procedure designed to save a tooth after decay or trauma, this procedure needs a tool called a "file" which is a tiny needle that needs to be disinfected and handled with care. This needle comes in various "sizes" symbolized by numbers and colors (e.g., red file, blue file, etc).
+              This causes unnecessairy friction in the clinic during the pulp therapy procedure where a dentist regularly have to search for the right file for the job. This is exactly where my prototype comes in. It saves crucial time and effort in the clinic by organizing the files in a device where any file needed is a couple button presses away!
+              This has the advanage of preserving infection control, and the sanity of the dental specialist who has to search for the right file in a box full of them!
+            </p>
+</div>
+</div>
+<div class="project-split" style="display:grid; grid-template-columns:1.08fr .92fr; gap:22px; align-items:start; margin-top:18px;">
+<div>
+<div style="border-radius:24px; overflow:hidden; border:1px solid rgba(22,22,22,.08); background:#111; box-shadow:0 18px 44px rgba(0,0,0,.14);">
+<video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata" style="width:100%; display:block; background:#000;">
+<source src="/assets/live_demonstration.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+</div>
+<p style="margin:12px 4px 0; color:var(--muted); font-size:.94rem;">
+              Live demonstration of the organizer in action. It opens muted, plays automatically, and can be unmuted directly from the player.
+            </p>
+</div>
+<div style="display:grid; gap:12px;">
+<div class="quote-box" style="margin:0;">
+              This project sits at the intersection of my dental background and my design instinct: identifying a precise clinical pain point,
+              then answering it through mechanism, enclosure, interface, and workflow.
+            </div>
+<div class="project-list">
+<div class="item">
+<strong>Problem</strong>
+<p>Conventional file organizers can slow the procedure, interrupt flow, and make instrument access less intuitive during pulp therapy.</p>
+</div>
+<div class="item">
+<strong>Response</strong>
+<p>I designed a digital organizer that lets the user call a chosen file through a keypad-based input and a rotating internal mechanism.</p>
+</div>
+<div class="item">
+<strong>What it showcases</strong>
+<p>Clinical insight, CAD thinking, fabrication planning, electronics integration, and physical prototyping brought together in one system.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="metric-row" style="margin-top:22px;">
+<div class="metric"><strong>Fusion 360</strong><span>CAD, enclosure design, internal layout</span></div>
+<div class="metric"><strong>Laser + 3D Print</strong><span>Plywood enclosure with printed functional parts</span></div>
+<div class="metric"><strong>Arduino Control</strong><span>Keypad, LCD, buzzer, stepper and power management</span></div>
+</div>
+<div style="margin-top:28px; display:grid; gap:16px;">
+<div class="label">How I made it</div>
+<p style="margin:0; color:#352f37;">
+            I began by defining the clinical need: a cleaner and faster way to access pulp therapy files. From there, I modeled the project in Fusion 360,
+            designing the enclosure, the rotating wheel, the file holders, and the support parts that would align the motor and mechanical components.
+            I then fabricated the enclosure in laser-cut plywood and produced the custom internal parts through 3D printing. After fabrication, I assembled the device,
+            wired the electronics on an Arduino-based system, and programmed the interaction between keypad input, LCD feedback, buzzer prompts, and the stepper-driven rotation.
+            The result is a prototype that translates a real treatment-room frustration into a tangible, functioning product.
+          </p>
+</div>
+<div style="margin-top:26px; display:grid; gap:16px;">
+<div class="label">Selected build visuals</div>
+<div class="project-gallery" style="display:grid; grid-template-columns:repeat(5, 1fr); gap:12px;">
+<figure style="margin:0; border-radius:18px; overflow:hidden; background:#f1ece5; border:1px solid rgba(22,22,22,.08);">
+<img alt="Laser-cut wooden enclosure parts and 3D-printed components" src="/assets/1.jpg">
+<figcaption style="padding:10px 12px; font-size:.83rem; color:var(--muted);">Laser-cut enclosure parts and printed components</figcaption>
+</figure>
+<figure style="margin:0; border-radius:18px; overflow:hidden; background:#f1ece5; border:1px solid rgba(22,22,22,.08);" style="width:100%; height:220px; object-fit:cover;">
+<img alt="Electronic components prepared for the project" src="/assets/2.jpg" style="width:100%; height:220px; object-fit:cover;"/>
+<figcaption style="padding:10px 12px; font-size:.83rem; color:var(--muted);">Electronic components and control hardware</figcaption>
+</figure>
+<figure style="margin:0; border-radius:18px; overflow:hidden; background:#f1ece5; border:1px solid rgba(22,22,22,.08);">
+<img alt="Fusion 360 design model of the organizer" src="/assets/3.png" style="width:100%; height:220px; object-fit:cover;"/>
+<figcaption style="padding:10px 12px; font-size:.83rem; color:var(--muted);">Fusion 360 enclosure and internal layout</figcaption>
+</figure>
+<figure style="margin:0; border-radius:18px; overflow:hidden; background:#f1ece5; border:1px solid rgba(22,22,22,.08);">
+<img alt="Connected electronic circuit inside the prototype" src="/assets/4.jpg" style="width:100%; height:220px; object-fit:cover;"/>
+<figcaption style="padding:10px 12px; font-size:.83rem; color:var(--muted);">Circuit integration and internal wiring</figcaption>
+</figure>
+<figure style="margin:0; border-radius:18px; overflow:hidden; background:#f1ece5; border:1px solid rgba(22,22,22,.08);">
+<img alt="Close-up of the rotating instrument wheel" src="/assets/5.jpg" style="width:100%; height:220px; object-fit:cover;"/>
+<figcaption style="padding:10px 12px; font-size:.83rem; color:var(--muted);">Rotating wheel designed around ten instrument positions</figcaption>
+</figure>
+</div>
+</div>
+<div class="project-bottom" style="margin-top:28px; display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:start;">
+<div class="project-list">
+<div class="item">
+<strong>How it works</strong>
+<p>The organizer is built around a rotating wheel with ten fixed positions. A keypad acts as the input, while the LCD and buzzer provide feedback to the user.</p>
+</div>
+<div class="item">
+<strong>Control logic</strong>
+<p>When a key is pressed, the system first returns the wheel to a known home position using a limit switch, then rotates to the requested slot so the selected file can be called consistently.</p>
+</div>
+<div class="item">
+<strong>System architecture</strong>
+<p>The build combines an Arduino Uno, keypad, LCD, buzzer, stepper motor with driver, breadboard-based power rails, and a separately powered solenoid path intended to push the file outward.</p>
+</div>
+</div>
+<div>
+<div class="quote-box">
+              What I find compelling about this project is that it is not just a box with electronics inside. It is a workflow decision translated into form:
+              the mechanism, the interface, and the enclosure all exist to reduce friction in a real clinical moment.
+            </div>
+<details style="margin-top:14px; background:#fff; border:1px solid rgba(22,22,22,.08); border-radius:18px; padding:16px 18px;">
+<summary style="cursor:pointer; font-weight:700; color:var(--burgundy);">Open the full build journal</summary>
+<p style="margin:12px 0 0; color:var(--muted);">
+                For the full process — ideation, CAD, fabrication settings, wiring, code logic, integration, and testing — see the complete journal:
+                <a href="https://sites.google.com/san3atech.com/md24w-dinaahmed/final-project/final-project-journal?authuser=0" rel="noopener" style="color:var(--burgundy); text-decoration:underline;" target="_blank">Final Project Journal</a>
+</p>
+</details>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section reveal" id="project-shelving">
+<div class="story-card" style="padding:30px; overflow:hidden;">
+<style>
+  #project-shelving .shelf-wrap{display:grid; gap:22px;}
+  #project-shelving .shelf-split{display:grid; grid-template-columns:1.06fr .94fr; gap:22px; align-items:start;}
+  #project-shelving .shelf-visual{margin:0; border-radius:24px; overflow:hidden; border:1px solid rgba(22,22,22,.08); background:#fff; box-shadow:0 18px 44px rgba(0,0,0,.08);}
+  #project-shelving .shelf-visual img{border-radius: 20px; width:100%; display:block; object-fit:cover; background:#f2ede7;}
+  #project-shelving .shelf-visual figcaption{padding:13px 16px; font-size:.92rem; color:var(--muted); background:#fff; border-top:1px solid rgba(22,22,22,.06);}
+  #project-shelving .shelf-side{display:grid; gap:16px;}
+  #project-shelving .shelf-note{padding:18px 20px; border-radius:22px; background:linear-gradient(135deg, rgba(126,24,50,.08), rgba(229,168,47,.10)); border:1px solid rgba(126,24,50,.10); color:#352f37; font-weight:500;}
+  #project-shelving .shelf-metrics{display:grid; grid-template-columns:repeat(3,1fr); gap:12px;}
+  #project-shelving .metric{background:#fff; border-radius:20px; padding:16px; border:1px solid rgba(22,22,22,.06);}
+  #project-shelving .metric strong{display:block; font-size:1.2rem; color:var(--burgundy);}
+  #project-shelving .metric span{font-size:.88rem; color:var(--muted);}
+#project-shelving .shelf-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 250px)); 
+  gap: 14px;
+  justify-content: center; /* centers the grid block */
+}
+
+#project-shelving .shelf-gallery .placeholder {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  padding: 10px;
+  border: 1.5px dashed rgba(126,24,50,.24);
+  background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(247,241,234,.92));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  box-shadow: 0 12px 30px rgba(37,23,31,.05);
+  overflow: hidden;
+}
+
+#project-shelving .shelf-gallery img,
+#project-shelving .shelf-gallery video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* crops overflow */
+  border-radius: 16px; /* rounded corners inside */
+  display: block;
+}
+
+
+  #project-shelving .catto{  width: 350px;
+  height:350px;
+  border-radius: 20px;
+  padding: 10px;
+  border: 1.5px dashed rgba(126,24,50,.24);
+  background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(247,241,234,.92));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 12px 30px rgba(37,23,31,.05);
+  overflow: hidden;}
+
+#project-shelving .catto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* crops overflow */
+  border-radius: 16px; /* rounded corners inside */  
+
+
+  #project-shelving .placeholder{min-height:220px; border-radius:20px; border:1.5px dashed rgba(126,24,50,.24); background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(247,241,234,.92)); padding:18px; display:flex; flex-direction:column; justify-content:flex-end; gap:8px; box-shadow:0 12px 30px rgba(37,23,31,.05);}
+  #project-shelving .placeholder strong{font-size:1rem; color:var(--burgundy);}
+  #project-shelving .placeholder span{font-size:.9rem; color:var(--muted);}
+  @media (max-width: 980px){
+    #project-shelving .shelf-split{grid-template-columns:1fr;}
+    #project-shelving .shelf-metrics{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width: 720px){
+    #project-shelving .shelf-gallery,
+    #project-shelving .shelf-metrics{grid-template-columns:1fr;}
+  }
+}
+
+
+
+</style>
+
+<div class="section-head" style="margin-bottom:20px;">
+  <div>
+    <div class="eyebrow">Project 02</div>
+    <h2>Wooden Shelving Unit — Designed, Fabricated, and Assembled from Scratch</h2>
+  </div>
+  <div class="section-copy">
+    <p>
+      This project began as a Fusion 360 model and developed into a full-scale wooden shelving unit through hands-on fabrication.
+      I translated the digital design into real material dimensions, then cut and assembled the structure myself with care for alignment, proportion, and durability.
+    </p>
+    <p>
+      I cut the wood using a professional table saw and worked with multiple power tools throughout the making process.
+      The final piece reflects both digital precision and physical craftsmanship — the moment a clean design becomes a real object you can live with.
+    </p>
+  </div>
+</div>
+
+<div class="shelf-wrap">
+  <div class="shelf-split">
+    <figure class="shelf-visual">
+      <img src="/assets/6.png" alt="Fusion 360 design render of the wooden shelving unit">
+      <figcaption>Fusion 360 design render of the shelving unit, showing the final proportions and compartment layout.</figcaption>
+    </figure>
+
+    <div class="shelf-side">
+      <div class="shelf-note">
+        This piece represents a part of my design process I value deeply: moving from screen-based thinking into real fabrication, where measurements, material behavior, and assembly all matter just as much as the original concept.
+      </div>
+
+      <div class="shelf-metrics">
+        <div class="metric">
+          <strong>Software</strong>
+          <span>Fusion 360</span>
+        </div>
+        <div class="metric">
+          <strong>Fabrication</strong>
+          <span>Table saw &amp; power tools</span>
+        </div>
+        <div class="metric">
+          <strong>Focus</strong>
+          <span>Precision, structure, and making</span>
+        </div>
+      </div>
+          <div class="catto">
+      <img src="/assets/catto.jpg">
+    </div>
+    </div>
+  </div>
+
+  <div class="shelf-gallery">
+    <div class="placeholder">
+      <strong>Inprogress build photo — front view</strong>
+      <img src="/assets/front.jpg" alt="Inprogress build photo — front view">
+    </div>
+    <div class="placeholder">
+      <strong>Final build photo — angled view</strong>
+      <img src="/assets/angled.jpg" alt="Inprogress build photo — angled view">
+    </div>
+    <div class="placeholder">
+      <strong>Fabrication process photo</strong>
+      <img src="/assets/fab_process.jpg" alt="Fabrication process photo">
+    </div>
+    <div class="placeholder">
+      <strong>Detail / close-up photo</strong>
+      <video controls playsinline preload="metadata" poster="/assets/poster.jpg" source src="/assets/vid_1.mp4" type="video/mp4">
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="section" id="project-two">
+<div class="case-main reveal" style="padding:34px; overflow:hidden;">
+<style>
+          #project-two .project-two-wrap{display:grid; gap:22px;}
+          #project-two .project-two-split{display:grid; grid-template-columns:1.04fr .96fr; gap:22px; align-items:start;}
+          #project-two .project-two-visual{background:rgba(255,253,250,.9); border:1px solid rgba(22,22,22,.06); border-radius:24px; overflow:visible; box-shadow:0 14px 34px rgba(37,23,31,.08);}
+          #project-two .project-two-card,
+          #project-two .project-two-mini{background:rgba(255,253,250,.9); border:1px solid rgba(22,22,22,.06); border-radius:24px; overflow:hidden; box-shadow:0 14px 34px rgba(37,23,31,.08);}
+          #project-two .project-two-visual img{width:100%; display:block; object-fit:cover; aspect-ratio:1/1;}
+          #project-two .project-two-caption{padding:14px 16px; color:var(--muted); font-size:.92rem; background:linear-gradient(180deg, rgba(126,24,50,.04), rgba(126,24,50,0)); border-top:1px solid rgba(22,22,22,.06);}
+          #project-two .project-two-card{padding:24px;}
+          #project-two .project-two-card h3, #project-two .project-two-mini h3{margin:0 0 12px; font-size:1.22rem; line-height:1.15;}
+          #project-two .project-two-card p, #project-two .project-two-mini p{margin:0; color:#352f37;}
+          #project-two .project-two-meta{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;}
+          #project-two .project-two-meta span{padding:9px 12px; border-radius:999px; background:rgba(126,24,50,.08); color:#61141e; border:1px solid rgba(126,24,50,.12); font-size:.88rem; font-weight:600;}
+          #project-two .project-two-list{display:grid; gap:10px; margin-top:14px;}
+          #project-two .project-two-list div{padding-left:18px; position:relative; color:var(--muted);}
+          #project-two .project-two-list div::before{content:""; width:8px; height:8px; border-radius:50%; background:var(--burgundy); position:absolute; left:0; top:.48em; box-shadow:0 0 0 4px rgba(126,24,50,.08);}
+          #project-two .project-two-mini{padding:22px; display:grid; gap:14px;}
+          #project-two .project-two-mini strong{display:block; margin-bottom:6px; font-size:1rem; color:var(--ink);}
+          #project-two .project-two-gallery{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; align-items:start;}
+          #project-two .project-two-shot{background:#fff; border:1px solid rgba(22,22,22,.06); border-radius:22px; overflow:hidden; box-shadow:0 12px 28px rgba(37,23,31,.07);}
+          #project-two .project-two-shot img{width:100%; display:block; object-fit:cover;}
+          #project-two .project-two-shot figcaption{padding:12px 14px; color:var(--muted); font-size:.92rem; border-top:1px solid rgba(22,22,22,.06); background:#fff;}
+          #project-two .mini-zoom{width:100px; height:100px; border-radius:0px; overflow:visible; cursor:pointer; border:0px solid rgba(22,22,22,.08); flex-shrink:0;}
+          #project-two .mini-zoom img{width:100%; height:100%; object-fit:fill; transition:transform .3s ease; position:relative; z-index:20;}
+          #project-two .mini-zoom:hover img{transform:scale(3); z-index:400;}
+          @media (max-width: 980px){
+            #project-two .project-two-split{grid-template-columns:1fr;}
+            #project-two .project-two-gallery{grid-template-columns:repeat(2,1fr);}
+          }
+          @media (max-width: 720px){
+            #project-two .project-two-gallery{grid-template-columns:1fr;}
+            #project-two .case-main{padding:22px !important;}
+          }
+        </style>
+<div class="section-head" style="margin-bottom:20px;">
+<div>
+<div class="eyebrow">Project 03</div>
+<h2>Desk Organizer designed, fabricated, and assembled from scratch</h2>
+</div>
+<div class="section-copy">
+<p>
+              A compact organizer I developed through sketching, CAD modeling, laser cutting, and final assembly.
+              What started as a class assignment became a functional object I customized into something personal,
+              with engraved details, a drawer, a note area, and upper storage for daily tools.
+            </p>
+</div>
+</div>
+<div class="project-two-wrap">
+<div class="project-two-split">
+<figure class="project-two-visual">
+<img alt="Final desk organizer designed, fabricated, and assembled from scratch" src="/assets/7.jpg"/>
+<div style="display:flex; align-items:center; gap:14px; margin-top:14px;">
+<figcaption class="project-two-caption" style="flex:1; margin:0;">Final fabricated desk organizer designed, laser-cut, assembled, and customized for real desktop use.</figcaption>
+<div class="mini-zoom"><img alt="Desk Organizer design in Fusion 360" src="/assets/8.png"/></div>
+</div>
+</figure>
+<div style="display:grid; gap:18px;">
+<article class="project-two-card">
+<p>I developed it through sketching, CAD planning in Fusion 360, laser cutting, and final assembly, then customized it into a usable desk piece with upper storage, a drawer, a note area, and a more personal visual identity.</p>
+<div class="project-two-meta">
+<span>Fusion 360</span>
+<span>LaserWorksV6</span>
+<span>Laser cutting</span>
+<span>3D-printed bracket</span>
+<span>3 mm plywood</span>
+</div>
+<div class="project-two-list">
+<div>Developed from concept and sketching into a full desk organizer with multiple functional zones.</div>
+<div>Fabricated in plywood through laser cutting, then assembled into a real working object.</div>
+<div>Customized as a personal organizer that combines storage, display, and everyday usability.</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+<div class="project-two-card">
+<div style="display:grid; gap:18px;">
+<div>
+<h3>Compact desk organizer</h3>
+<p>A compact organizer designed to hold pens and sticky notes while maintaining a clean desk layout. The piece was modeled in <strong>Fusion 360</strong> and fabricated using <strong>laser cutting on 3 mm plywood</strong>, turning a simple everyday need into a precise physical object.</p>
+<div class="project-two-meta">
+<span>Fusion 360</span>
+<span>Laser Cut</span>
+<span>3 mm Plywood</span>
+</div>
+<p style="margin-top:16px;"><a href="https://sites.google.com/san3atech.com/md24w-dinaahmed/weeks-journal/week3-journal" target="_blank" rel="noopener" style="color:var(--burgundy); text-decoration:underline; font-weight:700;">View more about this project</a></p>
+</div>
+<div style="display:grid; align:center; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px; display: grid; place-items: center;">
+<figure class="project-two-shot" style="margin:0;">
+<img alt="Desk organizer fabricated prototype" src="/assets/9.png"/>
+<figcaption>Fabricated prototype showing the final assembled organizer.</figcaption>
+</figure>
+<figure class="project-two-shot" style="margin:0;">
+<img alt="Desk organizer design render" src="/assets/10.png"/>
+<figcaption>Design render showing the organizer concept and proportions.</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="section" id="craft">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow">Craft</div>
+<h2>I like work you can actually touch</h2>
+</div>
+<div class="section-copy">
+<p>
+            I am drawn to making that leaves evidence: wood grain, engraved details, prototypes, scribbled notes, the slight imperfections
+            that prove an object passed through real hands before it became presentable.
+          </p>
+</div>
+</div>
+<div class="work-grid">
+<article class="work-card reveal">
+<div class="visual"><img alt="Finished handmade wooden frame" src="/assets/11.jpg"/></div>
+<div class="tag-row"><span class="tag">Woodworking</span><span class="tag">Finishing</span></div>
+<h3>Handmade wooden frame</h3>
+<p>
+            A small piece, but an important one. It reflects a side of me that values warmth, proportion, and objects that feel personal rather than mass-produced.
+          </p>
+</article>
+<article class="work-card reveal">
+<div class="visual"><img alt="Wood frame in progress" src="/assets/12.jpg"/></div>
+<div class="tag-row"><span class="tag">Process</span><span class="tag">Construction</span></div>
+<h3>Process over fantasy</h3>
+<p>
+            I enjoy seeing how parts come together. Even when the outcome is simple, the making teaches me how materials behave and where precision matters.
+          </p>
+</article>
+<article class="work-card reveal">
+<div class="visual"><img alt="Engraved signature by Dina Ahmed" src="/assets/13.jpg"/></div>
+<div class="tag-row"><span class="tag">Identity</span><span class="tag">Detail</span></div>
+<h3>Made with love, signed with intent</h3>
+<p>
+            I included this because it felt very me: sentimental without being careless, crafted without pretending not to care.
+          </p>
+</article>
+</div>
+</section>
+<section class="section" id="Favorite quote">
+<div class="values reveal">
+<div class="values-grid">
+<div>
+<p>
+He who works with his hands is a laborer.
+</p>
+<p>
+He who works with his hands and his head is a craftsman.
+</p>
+<p>
+He who works with his hands and his head and his heart is an artist.
+</p>
+<p>
+- Saint Francis of Assisi
+</p>
+</div>
+</section>
+<footer class="footer">
+<div class="footer-box reveal">
+<div>
+<div class="signature">Dina Ahmed</div>
+<div>Dentist • Aspiring product designer • Builder of better possibilities</div>
+</div>
+  <div class="contact-row reveal">
+    <a href="https://www.linkedin.com/in/dina-ahmed-150226372/" target="_blank" class="contact-item">
+      <span class="contact-icon">in</span>
+      <span class="contact-type">LinkedIn</span>
+      <span class="contact-val">Dina-Ahmed-150226372</span>
+    </a>
+    <a href="tel:+201004911501" class="contact-item">
+      <span class="contact-icon">☎</span>
+      <span class="contact-type">Phone</span>
+      <span class="contact-val">+20 104 423 1320</span>
+    </a>
+    <a href="mailto:dinaahmedali27@gmail.com" class="contact-item">
+      <span class="contact-icon">✉</span>
+      <span class="contact-type">Email</span>
+      <span class="contact-val">dinaahmedali27@gmail.com</span>
+    </a>
+  </div>
+</div>
+</footer>
+</main>
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+<script>
+(() => {
+  const body = document.body;
+  let activeModal = null;
+
+  const openModal = (modal) => {
+    if (!modal) return;
+    activeModal = modal;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    body.style.overflow = 'hidden';
+  };
+
+  const closeModal = (modal) => {
+    if (!modal) return;
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    if (activeModal === modal) activeModal = null;
+    body.style.overflow = '';
+  };
+
+  document.querySelectorAll('[data-open-modal]').forEach((button) => {
+    button.addEventListener('click', () => {
+      openModal(document.getElementById(button.getAttribute('data-open-modal')));
+    });
+  });
+
+  document.querySelectorAll('[data-close-modal]').forEach((button) => {
+    button.addEventListener('click', () => {
+      closeModal(button.closest('[role="dialog"]'));
+    });
+  });
+
+  document.querySelectorAll('[role="dialog"]').forEach((modal) => {
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal(modal);
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && activeModal) closeModal(activeModal);
+  });
+})();
+</script>
+</body>
+</html>
+
