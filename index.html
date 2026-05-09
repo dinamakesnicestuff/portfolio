@@ -254,8 +254,7 @@ h2{font-family:"DM Serif Display", Georgia, serif;font-size:clamp(2rem,4vw,2.5re
 }
 .footer .signature{font-family:"DM Serif Display", Georgia, serif;font-size:1.5rem;color:var(--burgundy)}
 
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease}
-.reveal.visible{opacity:1;transform:none}
+.reveal{opacity:1;transform:none;transition:opacity .7s ease, transform .7s ease}
 
 /* ── CONTACT ───────────────────────────────────── */
   .contact { background: var(--ink); text-align: center; }
@@ -329,7 +328,7 @@ h2{font-family:"DM Serif Display", Georgia, serif;font-size:clamp(2rem,4vw,2.5re
   .contact-row{grid-template-columns:1fr;max-width:100%;gap:1px}
   .contact-item{padding:1.15rem}
   .footer-box{display:grid;gap:18px;padding:22px}
-  #history iframe{min-height:2200px !important;border-radius:18px !important}
+  #history iframe{border-radius:18px !important}
   #project .project-gallery img{height:auto !important;aspect-ratio:4/3;object-fit:cover}
   #project .project-gallery figure{width:100% !important}
   #project-two .project-two-visual > div{display:grid !important;grid-template-columns:1fr;gap:10px}
@@ -443,10 +442,10 @@ h2{font-family:"DM Serif Display", Georgia, serif;font-size:clamp(2rem,4vw,2.5re
 <div class="story-card reveal" style="padding:18px; overflow:hidden;">
 <style>
           @media (max-width: 860px){
-            #history iframe{min-height:2050px !important;}
+            #history iframe{border-radius:18px !important;}
           }
         </style>
-<iframe loading="lazy" srcdoc='&lt;!DOCTYPE html&gt;
+<iframe srcdoc='&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
   &lt;meta charset="UTF-8" /&gt;
@@ -1220,7 +1219,9 @@ h2{font-family:"DM Serif Display", Georgia, serif;font-size:clamp(2rem,4vw,2.5re
     </div>
     <div class="placeholder">
       <strong>Detail / close-up photo</strong>
-      <video controls playsinline preload="metadata" poster="assets/poster.jpg" source src="assets/vid_1.mp4" type="video/mp4">
+      <video controls playsinline preload="metadata" poster="assets/poster.jpg">
+        <source src="assets/vid_1.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </div>
@@ -1327,6 +1328,8 @@ h2{font-family:"DM Serif Display", Georgia, serif;font-size:clamp(2rem,4vw,2.5re
 </figure>
 </div>
 </div>
+</div>
+</div>
 </section>
 <section class="section" id="craft">
 <div class="section-head reveal">
@@ -1385,6 +1388,8 @@ He who works with his hands and his head and his heart is an artist.
 - Saint Francis of Assisi
 </p>
 </div>
+</div>
+</div>
 </section>
 <footer class="footer">
 <div class="footer-box reveal">
@@ -1412,14 +1417,6 @@ He who works with his hands and his head and his heart is an artist.
 </div>
 </footer>
 </main>
-<script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
 <script>
 (() => {
   const body = document.body;
